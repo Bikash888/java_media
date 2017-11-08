@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.MediaController.MediaControl">
+   <center>
+      <MediaView fx:id="mediaview" fitHeight="320.0" fitWidth="600.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox fx:id="mediabar" prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #a7b5cc;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="50.0" prefWidth="156.0">
+               <children>
+                  <Label fx:id="currenttime" />
+               </children></VBox>
+            <Button fx:id="openfile" mnemonicParsing="false" onAction="#clickonopenfile" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #98a5a2;" text="Open File">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#c97ab7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="play" mnemonicParsing="false" onAction="#clcikonplay" prefHeight="25.0" prefWidth="43.0" style="-fx-background-color: #98a5a2;" text="play">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#c97ab7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="pause" mnemonicParsing="false" onAction="#clcikonpause" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #98a5a2;" text="pause">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#c97ab7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="slow" mnemonicParsing="false" onAction="#clickonslow" prefHeight="25.0" prefWidth="49.0" style="-fx-background-color: #98a5a2;" text="&lt;&lt;&lt;">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#c97ab7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="fast" mnemonicParsing="false" onAction="#clickonfast" style="-fx-background-color: #98a5a2;" text="&gt;&gt;&gt;">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#c97ab7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Button fx:id="stop" mnemonicParsing="false" onAction="#clickonstop" style="-fx-background-color: #98a5a2;" text="Exit">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#c97ab7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Volume">
+               <HBox.margin>
+                  <Insets bottom="2.0" left="2.0" top="12.0" />
+               </HBox.margin>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#c97ab7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Slider fx:id="slider" prefHeight="14.0" prefWidth="91.0" style="-fx-background-color: #baafbc;">
+               <HBox.margin>
+                  <Insets bottom="-20.0" left="10.0" right="30.0" top="12.0" />
+               </HBox.margin>
+            </Slider>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seek">
+               <HBox.margin>
+                  <Insets right="13.0" top="10.0" />
+               </HBox.margin>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#1b1818" />
+                        <Stop color="#bc6161" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <Slider fx:id="seekslider" prefHeight="14.0" prefWidth="485.0" style="-fx-background-color: #baafbc;">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin></Slider>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DISAPPEAR" />
+         </cursor>
+      </HBox>
+   </bottom>
+</BorderPane>
